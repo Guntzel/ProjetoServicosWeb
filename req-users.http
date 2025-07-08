@@ -1,0 +1,81 @@
+// REINICIE A APLICAÇÃO
+// CRIE UM USUÁRIO
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+	"name": "Genoveva",
+	"email": "genoveva@email.com",
+	"password": "12345+A"
+}
+###
+
+// LOG COM UM USER 
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+	"email": "Another@email.com",
+	"password": "12345+A"
+}
+###
+
+//COM TOKEN INVALIDO
+GET http://localhost:3000/users
+Authorization: Barer qualquercoisaqui
+###
+
+//COM TOKEN DE USER
+//COPIE O TOKEN RECEBIDO
+GET http://localhost:3000/users
+Authorization: Barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1ZjkyOWM0LTU3MjYtNDdmMS1hZTk4LWQyZDE5ZGFmM2IzNCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4Mzc0ODkzLCJleHAiOjE3NDgzNzg0OTN9.3GRI4Wgu0ZATUucGsKVOuP9vQ4I1QI0spv4fWQePAas
+###
+
+//LOGIN COM ADMIN
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+	"email": "elesbao@email.com",
+	"password": "123456"
+}
+###
+
+//COM TOKEN DE AMIN
+//COPIE O TOKEN RECEBIDO
+GET http://localhost:3000/users
+Authorization: Barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE3YTE2ZTFiLTFkNzgtNGUxYy1iMzg3LWE5ZDExNWNlYWZiYyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTk0MDQ2NiwiZXhwIjoxNzUxOTQ0MDY2fQ.5h6ei5jObSDgXuZ7MGHlyYU3bZIc2ZuP1kTVrF1WUMg
+###
+
+// CRIE TESTES PARA AS DEMAIS ROTAS
+
+// GET USER
+GET http://localhost:3000/users/25f929c4-5726-47f1-ae98-d2d19daf3b34
+Authorization: Barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM1YmMzODY3LTY5NzItNDgyMi05NDk1LWExZjU2MmEwZjQzZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODQ1MTkzMCwiZXhwIjoxNzQ4NDU1NTMwfQ.ivwWjvFmKwIl6KcIOgme08UftUoI9bsnY92YebuzrTA
+###
+
+// ALTERAR USER
+PUT http://localhost:3000/users/25f929c4-5726-47f1-ae98-d2d19daf3b34
+Authorization: Barer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM5ZjFkN2E2LTQ1NzItNDc5YS1hMzU4LTdhYTdlMDllZGRlNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODM3NDkyMSwiZXhwIjoxNzQ4Mzc4NTIxfQ.KUhO29Ekx1ehHzLWzwvQiotYD3bL2Y7c2eoHJc7tu8A
+Content-Type: application/json
+
+{
+   "name": "Genoveva Alterada"
+}
+###
+
+// DELETAR USER
+DELETE http://localhost:3000/users/25f929c4-5726-47f1-ae98-d2d19daf3b34
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM5ZjFkN2E2LTQ1NzItNDc5YS1hMzU4LTdhYTdlMDllZGRlNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODM3NDkyMSwiZXhwIjoxNzQ4Mzc4NTIxfQ.KUhO29Ekx1ehHzLWzwvQiotYD3bL2Y7c2eoHJc7tu8A
+###
+
+
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+	"name": "AnotherUser",
+	"email": "Another@email.com",
+	"password": "12345+A"
+}
+###

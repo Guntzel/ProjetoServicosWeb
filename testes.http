@@ -1,0 +1,120 @@
+
+
+
+//LOGIN COM ADMIN
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+	"email": "elesbao@email.com",
+	"password": "123456"
+}
+###
+
+//CRIAR UM CHAMADO
+
+POST http://localhost:3000/tickets
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2ZjIzN2VkLTM1ZTctNDRlMS1hODM4LTc0MjFkYzVjNjRlNyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzUxOTQxMzg2LCJleHAiOjE3NTE5NDQ5ODZ9.9O4r2EeuAtJkOzRb1BjRaZYYvyXXNDhZyVVNiM4ncJw
+Content-Type: application/json
+
+{
+  "title": "Problema na impressora",
+  "description": "Impressora não puxa papel",
+  "email": "Lucas@email.com"
+}
+###
+
+
+
+
+//-----------//
+//Minha bateria de testes//
+
+// REGISTRO CORRETO
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+	"name": "Lucas",
+	"email": "Lucas@email.com",
+	"password": "12345+A"
+}
+###
+
+// LOGIN CORRETO PARA USER Lucas
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+	"email": "Lucas@email.com",
+	"password": "12345+A"
+}
+###
+
+// REGISTRO CORRETO PARA USUARIO QUE NÃO ABRIU CHAMADOS
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+	"name": "AnotherUser",
+	"email": "Another@email.com",
+	"password": "12345+A"
+}
+###
+
+
+
+// LOGIN CORRETO PARA USUARIO QUE NÃO ABRIU CHAMADOS
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+	"email": "Another@email.com",
+	"password": "12345+A"
+}
+###
+
+
+//Lista chamados
+//Vai listar apenas os chamados do usuároi autenticado
+//Usuario Admin vai puxar os chamados de todos os usuários
+GET http://localhost:3000/tickets
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2ZjIzN2VkLTM1ZTctNDRlMS1hODM4LTc0MjFkYzVjNjRlNyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzUxOTQ1OTk3LCJleHAiOjE3NTE5NDk1OTd9.xiVgHXNM5VDupPNeOBowd2LApKc-IAjukPBxvpH86EQ
+###
+
+//Adiciona um chamado
+POST http://localhost:3000/tickets
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2ZjIzN2VkLTM1ZTctNDRlMS1hODM4LTc0MjFkYzVjNjRlNyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzUxOTQ1OTAzLCJleHAiOjE3NTE5NDk1MDN9.nop33_9UEJcnaw9EsHNYjTX3QrzxgAAMfipRm_3fHYU
+Content-Type: application/json
+
+{
+  "title": "Nova senha",
+  "description": "Esqueci a senha do meu E-mail. Solicito nova senha",
+  "email": "seu@email.com"
+}
+###
+
+
+PUT http://localhost:3000/tickets/d643e07c-e736-4f81-999a-dda218051530
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE3YTE2ZTFiLTFkNzgtNGUxYy1iMzg3LWE5ZDExNWNlYWZiYyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTk0NjAzMCwiZXhwIjoxNzUxOTQ5NjMwfQ.NDSSCEDvruWapV0kaScYroz_Y1cUY4LytPdReUrOfoc
+Content-Type: application/json
+
+{
+  "title": "Novo título2",
+  "description": "Nova descrição2",
+  "email": "novo@email.com"
+}
+
+###
+
+
+DELETE http://localhost:3000/tickets/f805d3bb-e9bc-4406-8825-0c76903048ea
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE3YTE2ZTFiLTFkNzgtNGUxYy1iMzg3LWE5ZDExNWNlYWZiYyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTk0NTc3NCwiZXhwIjoxNzUxOTQ5Mzc0fQ.iRlMKznRZU4FWwf0jMkUTqSsdTvx2JkU5KZZMqnfGJs
+###
+
+
+
+
+
+
+
