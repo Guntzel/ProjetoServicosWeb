@@ -33,14 +33,7 @@ A API estará disponível em: [http://localhost:3000](http://localhost:3000)
 ---
 
 -Usuário Admin
-
- O usuário admin é criado automaticamente pelo seed em ambiente de desenvolvimento.
- E-mail: elesbao@email.com
- Senha: 123456
- Role: admin
-
-
-
+ npx prisma db seed  
 
 -Chamados (Tickets)
 
