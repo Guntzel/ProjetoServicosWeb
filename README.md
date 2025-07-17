@@ -1,3 +1,6 @@
+Projeto para a disciplina de Serviços Web.
+Projeto de API Rest para testar rotas e autenticação de usuários com JWT
+
 -Baixe o repositório no Github. Abra o prompt de comando na pasta do projeto e instale as dependências
    npm install
    
